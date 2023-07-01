@@ -10,14 +10,14 @@ const initialState = {
   ProductUpdated: false,
   message: "",
 };
-const apiUrl = "http://localhost:4000";
+
 export const updateProduct = createAsyncThunk(
   "product/updateProduct",
   async ( productUpdated, { rejectWithValue }) => {
     console.log(productUpdated.id.id)
     try {
       const res = await axios.put(
-        `${apiUrl}/product/update-product/${productUpdated.id.id}`,
+        `${process.env.REACT_APP_BASE_URL}/product/update-product/${productUpdated.id.id}`,
         productUpdated,
         {
           headers: {
@@ -36,7 +36,7 @@ export const addProduct = createAsyncThunk(
   "product/addProduct",
   async (product, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${apiUrl}/product/add-product`, product, {
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/product/add-product`, product, {
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -53,7 +53,7 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (products,{rejectWithValue}) => {
     try {
-      const res = await axios.get(`${apiUrl}/product/products`);
+      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/product/products`);
       return res.data;
       
     } catch (error) {

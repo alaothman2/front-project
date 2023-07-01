@@ -14,12 +14,12 @@ const initialState = {
   userRole: "",
   message: "",
 };
-const apiUrl = "http://localhost:4000";
+
 export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async (user, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${apiUrl}/user/register`, {
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/register`, {
         username: user.username,
         email: user.email,
         password: user.password,
@@ -38,7 +38,7 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (user, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${apiUrl}/user/login`, {
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/login`, {
         email: user.email,
         password: user.password,
       });
@@ -54,7 +54,7 @@ export const getUser = createAsyncThunk(
   "auth/getUser",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`${apiUrl}/user/profile`, {
+      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/user/profile`, {
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -71,7 +71,7 @@ export const updateUser = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const res = await axios.put(
-        `${apiUrl}/user/update-profil`,
+        `${process.env.REACT_APP_BASE_URL}/user/update-profil`,
         {
           username: user.username,
           email: user.email,
@@ -96,7 +96,7 @@ export const forgetPassword = createAsyncThunk(
   "auth/forgetPasswod",
   async (email, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${apiUrl}/user/forget-password`, email);
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/forget-password`, email);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -108,7 +108,7 @@ export const confirmCode = createAsyncThunk(
   "auth/confirmCode",
   async ({ id, code }, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${apiUrl}/user/${id}/validate-code`, {
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/${id}/validate-code`, {
         code: code,
       });
       localStorage.setItem("token", res.data);
@@ -124,7 +124,7 @@ export const updatePassword = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const res = await axios.put(
-        `${apiUrl}/user/update-password`,
+        `${process.env.REACT_APP_BASE_URL}/user/update-password`,
         {
           password: user.password,
         },

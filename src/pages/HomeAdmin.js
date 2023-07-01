@@ -9,7 +9,7 @@ function HomeAdmin() {
   const [orders, setOrders] = useState([]);
   const getOrders = () => {
     axios
-      .get("http://localhost:4000/user/orders", {
+      .get(`${process.env.REACT_APP_BASE_URL}/user/orders`, {
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -22,10 +22,10 @@ function HomeAdmin() {
     getOrders();
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:4000/product/products");
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/product/products`);
         const data = await response.json();
         const count = data.length;
-        const userResponse = await fetch("http://localhost:4000/user/users", {
+        const userResponse = await fetch(`${process.env.REACT_APP_BASE_URL}/user/users`, {
           headers: {
             "x-auth-token": localStorage.getItem("token"),
           },

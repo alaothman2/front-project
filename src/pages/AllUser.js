@@ -9,7 +9,7 @@ function AllUser() {
   const deleteUser = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/user/delete-user/${id}`,
+        `${process.env.REACT_APP_BASE_URL}/user/delete-user/${id}`,
         {
           headers: {
             "x-auth-token": localStorage.getItem("token"),
@@ -23,7 +23,7 @@ function AllUser() {
   };
   function getUsers() {
     axios
-      .get("http://localhost:4000/user/users", {
+      .get(`${process.env.REACT_APP_BASE_URL}/user/users`, {
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },

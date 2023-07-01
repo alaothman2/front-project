@@ -6,7 +6,7 @@ function ManagingProducts() {
   const [prodcuts, setProdcuts] = useState([]);
   function getAllProduct() {
     axios
-      .get("http://localhost:4000/product/products")
+      .get(`${process.env.REACT_APP_BASE_URL}/product/products`)
       .then((Response) => {
         setProdcuts(Response.data);
       })
@@ -20,7 +20,7 @@ function ManagingProducts() {
   const deleteUser = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/product/delet-product/${id}`,
+        `${process.env.REACT_APP_BASE_URL}/product/delet-product/${id}`,
         {
           headers: {
             "x-auth-token": localStorage.getItem("token"),

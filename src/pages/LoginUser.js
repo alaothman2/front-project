@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/slices/authSlice";
-import imgback2 from "../images/bg_banner.jpg";
+
 import "../css/login.css";
+import Helmt from "../components/Helmt";
 function LoginUser() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
@@ -18,8 +19,10 @@ function LoginUser() {
   const registerhandler = (e) => {
     dispatch(loginUser(user));
   };
+  useEffect(() => window.scrollTo(0, 0),[]);
   return (
     <div>
+      <Helmt title={"login"}/>
       <div class="login">
         <div class="container main2">
           <div class="row row-style">

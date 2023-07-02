@@ -5,6 +5,7 @@ import { fetchProducts } from "../redux/slices/prodcutSlice";
 import { Link } from "react-router-dom";
 import { addtoCart } from "../redux/slices/cartSlice";
 import axios from "axios";
+import Helmt from "../components/Helmt";
 function Cart() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
@@ -17,6 +18,7 @@ function Cart() {
 
   return (
     <div className=" mb-5">
+      <Helmt title={"services"}/>
       <div className="container-cart ">
         <div className="header-cart mb-2">
           <h1>Notre carte</h1>

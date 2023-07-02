@@ -8,6 +8,7 @@ import {
 } from "../redux/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import "../css/forgetPass.css";
+import Helmt from "../components/Helmt";
 function Forgetpass() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
@@ -32,6 +33,7 @@ function Forgetpass() {
   };
   return (
     <div className=" mb-4  forget">
+      <Helmt title={"forget password"}/>
       <p className="forget-parg">please enter your email : </p>
       <input
         className="input-forget"

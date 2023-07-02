@@ -4,6 +4,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../redux/slices/authSlice";
 import "../css/register.css"
+import Helmt from "../components/Helmt";
 function RegisterUser() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
@@ -27,6 +28,7 @@ function RegisterUser() {
   return (
     <div>
       <div class="signUp">
+      <Helmt title={"SignUp"}/>
         <div class="container main2">
           <div class="row row-style">
             <div class="col-md-6 side-imageSignUp"></div>

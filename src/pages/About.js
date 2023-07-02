@@ -1,9 +1,11 @@
 import React from "react";
 import "../css/about.css";
 import { Link } from "react-router-dom";
+import Helmt from "../components/Helmt";
 function About() {
   return (
     <div className="bodyabout">
+      <Helmt title={"About"}/>
       <section className="sectionAbout">
         <div class="image"></div>
 

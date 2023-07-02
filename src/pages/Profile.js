@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BiUserCircle } from "react-icons/bi";
 import { updateUser } from "../redux/slices/authSlice";
 import "../css/Profile.css";
+import Helmt from "../components/Helmt";
 function Profile() {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function Profile() {
   };
   return (
     <div className="profil-back">
+      <Helmt title={"Profil"}/>
       <section className="py-5 my-5">
         <div className="container">
           <h1 className="mb-5">Account Settings</h1>

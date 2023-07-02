@@ -3,9 +3,11 @@ import "../css/home.css";
 import carousel1 from "../images/Design sans titre (17).png";
 import carousel2 from "../images/Design sans titre (16).png";
 import carousel3 from "../images/Design sans titre (20).png";
+import Helmt from "../components/Helmt";
 function Home() {
   return (
     <div>
+      <Helmt title={"Home"}/>
       <section className="main">
         <div className="container ">
           <div className="row justify-content-center align-items-center py-5  ">

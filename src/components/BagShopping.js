@@ -19,7 +19,7 @@ function BagShopping() {
   const email = auth.user.email
   const dispatch = useDispatch();
   const createOrder = () => {
-    axios.post("http://localhost:4000/user/order", {cart,total,email},{
+    axios.post(process.env.REACT_APP_BASE_URL+"/user/order", {cart,total,email},{
       headers: {
         "x-auth-token": localStorage.getItem("token"),
       },

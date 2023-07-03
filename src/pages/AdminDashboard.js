@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SideBarAdmin from "./SideBarAdmin";
 import "../css/Dashaboard.css";
 import { Outlet } from "react-router-dom";
 import Helmt from "../components/Helmt";
 function AdminDashboard() {
+  useEffect(() => window.scrollTo(0, 0),[]);
   return (
     <div className="container-fluid mt-5 bg-secondary  min-vh-100">
       <Helmt title={"Dashboard Admin"}/>

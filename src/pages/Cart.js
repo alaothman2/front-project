@@ -15,7 +15,7 @@ function Cart() {
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
-
+  useEffect(() => window.scrollTo(0, 0),[]);
   return (
     <div className=" mb-5">
       <Helmt title={"services"}/>

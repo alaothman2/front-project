@@ -6,6 +6,7 @@ function AllUser() {
   useEffect(() => {
     getUsers();
   }, []);
+  useEffect(() => window.scrollTo(0, 0),[]);
   const deleteUser = async (id) => {
     try {
       const res = await axios.delete(

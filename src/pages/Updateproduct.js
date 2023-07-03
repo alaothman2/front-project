@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch} from "react-redux";
 import { updateProduct } from "../redux/slices/prodcutSlice";
 import { useParams } from "react-router-dom";
@@ -10,6 +10,7 @@ function Updateproduct() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
+  useEffect(() => window.scrollTo(0, 0),[]);
   const id = useParams();
   const productUpdated = {
     name,

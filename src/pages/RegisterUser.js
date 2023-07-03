@@ -25,6 +25,7 @@ function RegisterUser() {
   useEffect(() => {
     if (auth.isLogin) navigate("/");
   }, [auth.isLogin]);
+  useEffect(() => window.scrollTo(0, 0),[]);
   return (
     <div>
       <div class="signUp">

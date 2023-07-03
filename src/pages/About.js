@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/about.css";
 import { Link } from "react-router-dom";
 import Helmt from "../components/Helmt";
 function About() {
+  useEffect(() => window.scrollTo(0, 0),[]);
   return (
     <div className="bodyabout">
       <Helmt title={"About"}/>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -16,7 +16,7 @@ function Profile() {
   const [Phone, setPhone] = useState("");
   const [birthday, setBirthday] = useState("");
  
-
+  useEffect(() => window.scrollTo(0, 0),[]);
   const id = auth.user?._id;
   const user = { id, username, email, password,birthday,Phone };
   const updatehandler = (e) => {

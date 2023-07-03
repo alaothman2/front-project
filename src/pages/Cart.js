@@ -57,8 +57,7 @@ function Cart() {
                       <span>{product.price}DT</span>
                     </div>
                     <p className="desc">
-                      fekfh efihzf eifzifhzei iezfhzeifh zefhize fhezifheiz
-                      hfiezhf izhfzeif heifzeifhzeifhzeifhziefh ief iefzeifh{" "}
+                      {product.description}
                     </p>
 
                     <div className="bay">

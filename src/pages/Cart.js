@@ -21,7 +21,7 @@ function Cart() {
       <Helmt title={"services"}/>
       <div className="container-cart ">
         <div className="header-cart mb-2">
-          <h1>Notre carte</h1>
+          <h1>Our carte</h1>
           <p>No excuses, treat yourself: there's something for everyone!</p>
           <input
             type="text"

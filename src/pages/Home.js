@@ -4,7 +4,9 @@ import carousel1 from "../images/Design sans titre (17).png";
 import carousel2 from "../images/Design sans titre (16).png";
 import carousel3 from "../images/Design sans titre (20).png";
 import Helmt from "../components/Helmt";
+import { useEffect } from "react";
 function Home() {
+  useEffect(() => window.scrollTo(0, 0),[]);
   return (
     <div>
       <Helmt title={"Home"}/>
